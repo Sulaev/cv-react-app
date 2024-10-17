@@ -1,0 +1,10 @@
+.ContentContainer {
+  height: 80%;
+}
+
+.CardContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 20%;
+}

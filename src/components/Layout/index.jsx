@@ -1,7 +1,7 @@
 import "./styles.css"
 
 export const Layout = (props) => {
-  const { name } = props
+  const { children } = props
 
-  return <div className="Layout">hello {name}</div>
+  return <div className="Layout">{children}</div>
 }

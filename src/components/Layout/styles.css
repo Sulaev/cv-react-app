@@ -1,5 +1,6 @@
 .Layout {
   padding: 30px;
-
-  color: red;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
