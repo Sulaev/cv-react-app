@@ -1,0 +1,26 @@
+:root {
+  font-family: Rethink Sans, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: #000;
+  color: #fff;
+}
+
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("src/assets/fonts/RethinkSans-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("src/assets/fonts/RethinkSans-Regular.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("src/assets/fonts/RethinkSans-SemiBold.ttf");
+  font-weight: 700;
+}
