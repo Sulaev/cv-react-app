@@ -10,6 +10,10 @@
 
   background-color: #000;
   color: #fff;
+
+  --background-color: #000000;
+  --text-color: #FFFFFFD9;
+  --accent-color: #C1F80C;
 }
 
 body {
@@ -18,6 +22,9 @@ body {
   margin: 0;
 
   box-sizing: border-box;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 @font-face {
@@ -35,5 +42,23 @@ body {
 @font-face {
   font-family: "Rethink Sans";
   src: url("src/assets/fonts/RethinkSans-SemiBold.ttf");
+  font-weight: 700;
+}
+
+.Text__regular {
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+.Text__header {
+  font-size: 75px;
+  line-height: 97px;
+  font-weight: 700;
+}
+
+.Text__medium {
+  font-size: 36px;
+  line-height: 47px;
   font-weight: 700;
 }
