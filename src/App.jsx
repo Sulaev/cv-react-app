@@ -7,8 +7,8 @@ function App() {
   const { t } = useTranslation()
 
   return (
-    <div>
-      {t('test')}
+    <div style={{height: "100%"}}>
+      {/* {t('test')} */}
       <Main />
     </div>
 

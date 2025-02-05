@@ -1,12 +1,13 @@
 import { Layout } from "../../components/Layout"
 import { Card } from "../../components/Card"
+import { Banner } from "../../components/Banner"
 import "./styles.css"
 
 export const Main = () => {
   return (
     <Layout>
       <div className="ContentContainer">
-        <Card />
+        <Banner />
       </div>
       <div className="CardContainer">
         <Card />
