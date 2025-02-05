@@ -1,3 +1,9 @@
+:root {
+  --background-color: #000000;
+  --text-color: #FFFFFFD9;
+  --accent-color: #C1F80C;
+}
+
 .ContentContainer {
   height: 80%;
 }
