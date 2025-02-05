@@ -21,10 +21,14 @@ body {
   height: 100%;
   margin: 0;
 
-  box-sizing: border-box;
+  overflow: hidden;
 
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @font-face {
