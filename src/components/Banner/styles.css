@@ -1,8 +1,29 @@
 .Banner {
   border: 1px solid rgba(255, 255, 255, 0.33);
   border-radius: 25px;
-  padding: 30px;
+  padding: 0 30px;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-conteiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-container {
+  align-self: flex-end;
+}
+
+.bottom-container {
+  align-self: flex-end;
+}
+
+.history-block {
+  width: 607px;
+  height: 125px;
 }
