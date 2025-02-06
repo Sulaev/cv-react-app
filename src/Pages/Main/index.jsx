@@ -1,6 +1,6 @@
-import { Layout } from "../../components/Layout"
-import { Card } from "../../components/Card"
-import { Banner } from "../../components/Banner"
+import { Card } from "@/components/Card"
+import { Layout } from "@/components/Layout"
+import { Banner } from "@/components/Banner"
 import "./styles.css"
 
 export const Main = () => {
