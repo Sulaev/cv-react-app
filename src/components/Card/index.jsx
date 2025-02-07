@@ -1,7 +1,11 @@
 import "./styles.css"
+import ArrowIcon from "@/assets/icons/arrow.svg?react";
 
-export const Card = () => {
+export const Card = ({ label, tags }) => {
   return <div className="Card">
-    Card Text
+    <div className="Card__content">
+      <span className="Text__medium">{label}</span>
+      <ArrowIcon />
+    </div>
   </div>
 }

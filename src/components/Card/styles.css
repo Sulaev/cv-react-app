@@ -4,4 +4,14 @@
   padding: 30px;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.Card__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
 }
