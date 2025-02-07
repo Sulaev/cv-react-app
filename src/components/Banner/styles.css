@@ -15,6 +15,11 @@
   justify-content: space-between;
 }
 
+.center-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .bottom-container {
   align-self: flex-end;
 }
