@@ -6,7 +6,6 @@
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  /* min-height: 240px; */
 }
 
 .Card__content {
