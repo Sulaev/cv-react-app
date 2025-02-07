@@ -10,25 +10,21 @@
   justify-content: space-between;
 }
 
-.top-conteiner {
+.TopConteiner {
   display: flex;
   justify-content: space-between;
 }
 
-.center-container {
+.ContentContainer {
   display: flex;
   justify-content: space-between;
 }
 
-.bottom-container {
-  align-self: flex-end;
-}
-
-.bottom-container {
+.BottomContainer {
   align-self: flex-start;
 }
 
-.history-block {
+.HistoryBlock {
   width: 607px;
   height: 125px;
 }
