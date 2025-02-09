@@ -27,7 +27,7 @@
 
 .Tag__list {
   position: absolute;
-  bottom: -30px;
+  bottom: 90%;
   padding: 10px;
   gap: 10px;
   display: flex;
