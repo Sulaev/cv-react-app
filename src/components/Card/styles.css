@@ -21,19 +21,27 @@
 }
 
 .Card:hover .Tag__list {
-  bottom: 100%;
+  bottom: 100px;
   opacity: 1;
 }
 
 .Tag__list {
-  position: relative;
-  bottom: -30px;
+  position: absolute;
+  bottom: -100px;
   padding: 10px;
   gap: 10px;
   display: flex;
   flex-direction: column;
-  transition: bottom 0.3s, opacity 0.3s;
+  transition: bottom 0.5s, opacity 0.5s;
   align-items: flex-start;
+}
+
+.Card:hover .ArrowIcon {
+  transform: rotate(-90deg);
+}
+
+.ArrowIcon {
+  transition: transform 0.5s ease 0.05s;
 }
 
 .Portal {

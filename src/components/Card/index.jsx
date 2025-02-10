@@ -48,9 +48,10 @@ export const Card = ({ label, tags }) => {
       return
     }
     setIsPortalVisible(false)
+
     setTimeout(() => {
       setIsHovered(false)
-    }, 300)
+    }, 200)
   }
 
   return (
@@ -84,7 +85,7 @@ export const Card = ({ label, tags }) => {
             >
               <div className="Card__content">
                 <span className="Text__medium">{label}</span>
-                <ArrowIcon />
+                <ArrowIcon className="ArrowIcon" />
               </div>
               <div
                 ref={portalTagListRef}
