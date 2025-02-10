@@ -10,7 +10,8 @@ export const Card = ({ label, tags }) => {
   const portalCardRef = useRef(null)
   const portalTagListRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
-  const [isPortalVisible, setIsPortalVisible] = useState(false)
+  const [arrowIsWisible, setArrowIsWisible] = useState(true)
+
   const [cardPositionAndSize, setCardPositionAndSize] = useState({
     x: 0,
     y: 0,
@@ -32,79 +33,81 @@ export const Card = ({ label, tags }) => {
   }, [])
 
   const handleMouseEnter = () => {
-    setIsHovered(true)
-    setTimeout(() => {
-      setIsPortalVisible(true)
-    }, 0)
-  }
+    setIsHovered(true);
+    setArrowIsWisible(false);
+  };
 
-  const handleMouseMove = (event) => {
-    if (
-      portalCardRef.current.contains(event.target) ||
-      portalTagListRef.current.contains(event.target)
-    ) {
-      setIsHovered(true)
-      setIsPortalVisible(true)
-      return
-    }
-    setIsPortalVisible(false)
+  const handleMouseLeave = () => {
+    console.log('test')
+    setIsHovered(false);
+    setArrowIsWisible(true);
+  };
 
-    setTimeout(() => {
-      setIsHovered(false)
-    }, 200)
-  }
+  // const handleMouseMove = (event) => {
+  //   if (
+  //     portalCardRef.current.contains(event.target) ||
+  //     portalTagListRef.current.contains(event.target)
+  //   ) {
+  //     setIsHovered(true)
+  //     return
+  //   }
+  //   handleMouseLeave();
+  // }
 
   return (
     <>
-      <div className="Card" ref={cardRef} onMouseEnter={handleMouseEnter}>
+      <div className="Card"
+        ref={cardRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div className="Card__content">
           <span className="Text__medium">{label}</span>
-          <ArrowIcon />
+          <ArrowIcon
+            className={`${arrowIsWisible ? 'visible' : 'hidden'}`}
+          />
         </div>
       </div>
-      {isHovered &&
-        createPortal(
+      {createPortal(
+        <div
+          className={`Portal ${isHovered ? "visible" : ""}`}
+          onMouseEnter={handleMouseEnter}
+        // onMouseLeave={handleMouseLeave}
+        >
           <div
-            className="Portal"
-            onMouseMove={handleMouseMove}
+            className="Card"
+            ref={portalCardRef}
             style={{
-              opacity: isPortalVisible ? 1 : 0,
+              position: "absolute",
+              top: cardPositionAndSize.y,
+              left: cardPositionAndSize.x,
+              width: cardPositionAndSize.width,
+              height: cardPositionAndSize.height,
             }}
+            onMouseLeave={handleMouseLeave}
           >
+            <div className="Card__content">
+              <span className="Text__medium">{label}</span>
+              <ArrowIcon className="ArrowIcon" />
+            </div>
             <div
-              className="Card"
-              ref={portalCardRef}
-              onMouseEnter={handleMouseEnter}
+              ref={portalTagListRef}
+              className="Tag__list"
               style={{
                 position: "absolute",
-                top: cardPositionAndSize.y,
-                left: cardPositionAndSize.x,
-                width: cardPositionAndSize.width,
-                height: cardPositionAndSize.height,
+                bottom: cardPositionAndSize.height,
+                zIndex: 1000,
+                left: 0,
               }}
             >
-              <div className="Card__content">
-                <span className="Text__medium">{label}</span>
-                <ArrowIcon className="ArrowIcon" />
-              </div>
-              <div
-                ref={portalTagListRef}
-                className="Tag__list"
-                style={{
-                  position: "absolute",
-                  bottom: cardPositionAndSize.height,
-                  zIndex: 1000,
-                  left: 0,
-                }}
-              >
-                {tags.map((tag, index) => (
-                  <Tag key={`${tag.label}-${index}`} label={tag.label} url={tag.url} />
-                ))}
-              </div>
+              {tags.map((tag, index) => (
+                <Tag key={`${tag.label}-${index}`} label={tag.label} url={tag.url} />
+              ))}
             </div>
-          </div>,
-          document.body
-        )}
+          </div>
+        </div>,
+        document.body
+      )}
     </>
   )
 }
