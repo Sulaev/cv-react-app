@@ -20,47 +20,49 @@ export const Card = ({ label, tags }) => {
   })
 
   useEffect(() => {
-    if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect()
+    const updatePosition = () => {
+      if (cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect()
 
-      setCardPositionAndSize({
-        x: rect.left + window.scrollX,
-        y: rect.top + window.scrollY,
-        width: rect.width,
-        height: rect.height,
-      })
+        setCardPositionAndSize({
+          x: rect.left + window.scrollX,
+          y: rect.top + window.scrollY,
+          width: rect.width,
+          height: rect.height,
+        })
+      }
+    }
+
+    window.addEventListener("scroll", updatePosition)
+    window.addEventListener("resize", updatePosition)
+    updatePosition()
+
+    return () => {
+      window.removeEventListener("scroll", updatePosition)
+      window.removeEventListener("resize", updatePosition)
     }
   }, [])
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
-    setArrowIsWisible(false);
-  };
+    setIsHovered(true)
+    setArrowIsWisible(false)
+  }
 
   const handleMouseLeave = () => {
-    console.log('test')
-    setIsHovered(false);
-    setArrowIsWisible(true);
-  };
+    setIsHovered(false)
+    setArrowIsWisible(true)
+  }
 
   return (
     <>
-      <div className="Card"
-        ref={cardRef}
-        onMouseEnter={handleMouseEnter}
-      >
+      <div className="Card" ref={cardRef} onMouseEnter={handleMouseEnter}>
         <div className="Card__content">
           <span className="Text__medium">{label}</span>
-          <ArrowIcon
-            className={`${arrowIsWisible ? 'visible ArrowIcon' : 'hidden'}`}
-          />
+          <ArrowIcon className={`${arrowIsWisible ? "visible ArrowIcon" : "hidden"}`} />
         </div>
       </div>
       {createPortal(
-        <div
-          className={`Portal ${isHovered ? "visible" : ""}`}
-          onMouseEnter={handleMouseEnter}
-        >
+        <div className={`Portal ${isHovered ? "visible" : ""}`} onMouseEnter={handleMouseEnter}>
           <div
             className="Card"
             ref={portalCardRef}
