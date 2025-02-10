@@ -43,28 +43,16 @@ export const Card = ({ label, tags }) => {
     setArrowIsWisible(true);
   };
 
-  // const handleMouseMove = (event) => {
-  //   if (
-  //     portalCardRef.current.contains(event.target) ||
-  //     portalTagListRef.current.contains(event.target)
-  //   ) {
-  //     setIsHovered(true)
-  //     return
-  //   }
-  //   handleMouseLeave();
-  // }
-
   return (
     <>
       <div className="Card"
         ref={cardRef}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         <div className="Card__content">
           <span className="Text__medium">{label}</span>
           <ArrowIcon
-            className={`${arrowIsWisible ? 'visible' : 'hidden'}`}
+            className={`${arrowIsWisible ? 'visible ArrowIcon' : 'hidden'}`}
           />
         </div>
       </div>
@@ -72,7 +60,6 @@ export const Card = ({ label, tags }) => {
         <div
           className={`Portal ${isHovered ? "visible" : ""}`}
           onMouseEnter={handleMouseEnter}
-        // onMouseLeave={handleMouseLeave}
         >
           <div
             className="Card"
