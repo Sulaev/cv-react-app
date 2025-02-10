@@ -16,6 +16,8 @@ export const CardContainer = () => {
     height: 0,
   })
 
+  const timeoutIdRef = useRef(null)
+
   useEffect(() => {
     const updatePosition = () => {
       if (containerRef.current) {
@@ -43,11 +45,14 @@ export const CardContainer = () => {
   const handleMouseEnter = () => {
     setIsPortalMounted(true)
     setIsPortalVisible(true)
+    if (timeoutIdRef.current) {
+      clearTimeout(timeoutIdRef.current)
+    }
   }
 
   const handleMouseLeave = () => {
     setIsPortalVisible(false)
-    setTimeout(() => {
+    timeoutIdRef.current = setTimeout(() => {
       setIsPortalMounted(false)
     }, 1000)
   }
@@ -74,7 +79,7 @@ export const CardContainer = () => {
               onMouseLeave={handleMouseLeave}
             >
               {CARD_CONFIG.map((card, index) => (
-                <Card key={`${card.label}-${index}`} label={card.label} tags={card.tags} />
+                <Card key={`${card.label}-${index}`} label={card.label} tags={card.tags} isPortal />
               ))}
             </div>
           </div>,

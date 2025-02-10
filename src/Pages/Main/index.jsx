@@ -1,4 +1,3 @@
-import { Card } from "@/components/Card"
 import { Layout } from "@/components/Layout"
 import { Banner } from "@/components/Banner"
 import "./styles.css"
@@ -11,11 +10,6 @@ export const Main = () => {
         <Banner />
       </div>
       <CardContainer />
-      {/* <div className="CardContainer">
-        {CARD_CONFIG.map((card) => (
-          <Card label={card.label} tags={card.tags} />
-        ))}
-      </div> */}
     </Layout>
   )
 }
