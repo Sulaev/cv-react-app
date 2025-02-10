@@ -10,7 +10,7 @@ export const Card = ({ label, tags }) => {
   const portalCardRef = useRef(null)
   const portalTagListRef = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
-  const [arrowIsWisible, setArrowIsWisible] = useState(true)
+  const [isPortalVisible, setIsPortalVisible] = useState(false)
 
   const [cardPositionAndSize, setCardPositionAndSize] = useState({
     x: 0,
@@ -18,6 +18,8 @@ export const Card = ({ label, tags }) => {
     width: 0,
     height: 0,
   })
+
+  let intervalId
 
   useEffect(() => {
     const updatePosition = () => {
@@ -44,13 +46,16 @@ export const Card = ({ label, tags }) => {
   }, [])
 
   const handleMouseEnter = () => {
+    clearTimeout(intervalId)
     setIsHovered(true)
-    setArrowIsWisible(false)
+    setIsPortalVisible(true)
   }
 
   const handleMouseLeave = () => {
     setIsHovered(false)
-    setArrowIsWisible(true)
+    intervalId = setTimeout(() => {
+      setIsPortalVisible(false)
+    }, 300)
   }
 
   return (
@@ -58,45 +63,46 @@ export const Card = ({ label, tags }) => {
       <div className="Card" ref={cardRef} onMouseEnter={handleMouseEnter}>
         <div className="Card__content">
           <span className="Text__medium">{label}</span>
-          <ArrowIcon className={`${arrowIsWisible ? "visible ArrowIcon" : "hidden"}`} />
+          <ArrowIcon />
         </div>
       </div>
-      {createPortal(
-        <div className={`Portal ${isHovered ? "visible" : ""}`} onMouseEnter={handleMouseEnter}>
-          <div
-            className="Card"
-            ref={portalCardRef}
-            style={{
-              position: "absolute",
-              top: cardPositionAndSize.y,
-              left: cardPositionAndSize.x,
-              width: cardPositionAndSize.width,
-              height: cardPositionAndSize.height,
-            }}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="Card__content">
-              <span className="Text__medium">{label}</span>
-              <ArrowIcon className="ArrowIcon" />
-            </div>
+      {isPortalVisible &&
+        createPortal(
+          <div className={`Portal ${isHovered ? "visible" : ""}`} onMouseEnter={handleMouseEnter}>
             <div
-              ref={portalTagListRef}
-              className="Tag__list"
+              className="Card"
+              ref={portalCardRef}
               style={{
                 position: "absolute",
-                bottom: cardPositionAndSize.height,
-                zIndex: 1000,
-                left: 0,
+                top: cardPositionAndSize.y,
+                left: cardPositionAndSize.x,
+                width: cardPositionAndSize.width,
+                height: cardPositionAndSize.height,
               }}
+              onMouseLeave={handleMouseLeave}
             >
-              {tags.map((tag, index) => (
-                <Tag key={`${tag.label}-${index}`} label={tag.label} url={tag.url} />
-              ))}
+              <div className="Card__content">
+                <span className="Text__medium">{label}</span>
+                <ArrowIcon />
+              </div>
+              <div
+                ref={portalTagListRef}
+                className="Tag__list"
+                style={{
+                  position: "absolute",
+                  bottom: cardPositionAndSize.height,
+                  zIndex: 1000,
+                  left: 0,
+                }}
+              >
+                {tags.map((tag, index) => (
+                  <Tag key={`${tag.label}-${index}`} label={tag.label} url={tag.url} />
+                ))}
+              </div>
             </div>
-          </div>
-        </div>,
-        document.body
-      )}
+          </div>,
+          document.body
+        )}
     </>
   )
 }

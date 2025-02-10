@@ -23,7 +23,6 @@
 .Tag__list {
   position: absolute;
   bottom: 100%;
-  /* left: 0; */
   padding: 10px;
   gap: 10px;
   display: flex;
@@ -33,25 +32,8 @@
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.visible {
-  opacity: 1;
-  transition: opacity 0.5s ease 0.6;
-}
-
-.hidden {
-  opacity: 0.1;
-}
-
 .Card:hover .Tag__list {
   opacity: 1;
-}
-
-.ArrowIcon {
-  transition: transform 0.5s ease;
-}
-
-.Card:hover .ArrowIcon {
-  transform: rotate(-90deg);
 }
 
 .Portal {
@@ -66,7 +48,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
   pointer-events: none;
 }
 
