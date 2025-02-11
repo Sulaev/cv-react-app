@@ -1,4 +1,4 @@
-.Card {
+.Cards {
   border: 1px solid rgba(255, 255, 255, 0.33);
   border-radius: 25px;
   padding: 30px;
@@ -8,7 +8,7 @@
   position: relative;
 }
 
-.card:hover {
+.cards:hover {
   background-color: #000000;
 }
 
@@ -33,6 +33,14 @@
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.Card:hover .Tag__list {
+.Cards:hover .Tag__list {
   opacity: 1;
+}
+
+.ArrowIcon {
+  transition: transform 0.5s ease 0.05s;
+}
+
+.Cards:hover .ArrowIcon {
+  transform: rotate(-90deg);
 }

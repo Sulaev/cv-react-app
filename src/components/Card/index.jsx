@@ -23,10 +23,10 @@ export const Card = ({ label, tags, isPortal = false }) => {
 
   return (
     <>
-      <div className="Card" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className="Cards" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <div className="Card__content">
           <span className="Text__medium">{label}</span>
-          <ArrowIcon />
+          <ArrowIcon className="ArrowIcon" />
         </div>
         {isTaglistMounted && (
           <div

@@ -26,6 +26,13 @@
   gap: 20px;
   height: 20%;
   width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.CardContainer:hover .Portal {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .CardContainer__portal {
