@@ -1,0 +1,10 @@
+.Tag {
+    border: 1px solid rgba(255, 255, 255, 0.33);
+    background-color: var(--accent-color);
+    border-radius: 25px;
+    padding: 10px 28px;
+    width: fit-content;
+    display: inline-block;
+    text-align: left;
+    white-space: nowrap;
+}
