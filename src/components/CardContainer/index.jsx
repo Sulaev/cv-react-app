@@ -44,7 +44,9 @@ export const CardContainer = () => {
 
   const handleMouseEnter = () => {
     setIsPortalMounted(true)
-    setIsPortalVisible(true)
+    setTimeout(() => {
+      setIsPortalVisible(true)
+    }, 10)
     if (timeoutIdRef.current) {
       clearTimeout(timeoutIdRef.current)
     }

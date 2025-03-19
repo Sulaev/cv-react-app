@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: flex-start;
   opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s;
 }
 
 .Cards:hover .Tag__list {
@@ -38,9 +38,10 @@
 }
 
 .ArrowIcon {
-  transition: transform 0.5s ease 0.05s;
+  transition: transform 1s ease 0.1s;
 }
 
 .Cards:hover .ArrowIcon {
   transform: rotate(-90deg);
+  background-color: #000000;
 }
