@@ -67,7 +67,7 @@ export const CARD_CONFIG = [
     tags: [
       {
         label: "github",
-        url: "/test",
+        url: "https://github.com/Sulaev",
       },
       {
         label: "linkedin",
@@ -75,11 +75,11 @@ export const CARD_CONFIG = [
       },
       {
         label: "telegram",
-        url: "/test",
+        url: "https://t.me/SulaevE",
       },
       {
         label: "email",
-        url: "/test",
+        url: "mailto:sulaevDev@gmail.com",
       },
     ],
   },
