@@ -12,8 +12,8 @@
   color: #fff;
 
   --background-color: #000000;
-  --text-color: #FFFFFFD9;
-  --accent-color: #C1F80C;
+  --text-color: #ffffffd9;
+  --accent-color: #c1f80c;
 }
 
 body {
@@ -70,5 +70,17 @@ body {
 .Text__medium {
   font-size: 36px;
   line-height: 47px;
+  font-weight: 700;
+}
+
+.Text__Mobile__header {
+  font-size: 36px;
+  line-height: 47px;
+  font-weight: 700;
+}
+
+.Text__Mobile__medium {
+  font-size: 10px;
+  line-height: 37px;
   font-weight: 700;
 }
