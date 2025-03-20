@@ -12,14 +12,11 @@
 .MobileTopConteiner {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .MobileContentContainer {
   display: flex;
   flex-direction: column;
-}
-
-.MobileHistoryBlock {
-  width: 1em;
-  height: 1em;
+  align-items: center;
 }
