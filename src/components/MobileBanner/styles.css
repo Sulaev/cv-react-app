@@ -1,30 +1,25 @@
 .MobileBanner {
   border: 1px solid rgba(255, 255, 255, 0.33);
   border-radius: 25px;
-  padding: 0 30px;
+  padding: 0 20px;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.TopConteiner {
+.MobileTopConteiner {
   display: flex;
   flex-direction: column;
 }
 
-.ContentContainer {
+.MobileContentContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-.BottomContainer {
-  align-self: flex-start;
-}
-
-.HistoryBlock {
-  width: 607px;
-  height: 125px;
+.MobileHistoryBlock {
+  width: 1em;
+  height: 1em;
 }

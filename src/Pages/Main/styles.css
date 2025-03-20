@@ -1,3 +1,7 @@
 .ContentContainer {
   height: 80%;
 }
+
+.MobileContentContainer {
+  height: 100%;
+}

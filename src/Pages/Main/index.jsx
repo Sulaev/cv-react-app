@@ -16,13 +16,11 @@ export const Main = () => {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
-  console.log(window.innerWidth)
-  console.log(isMobile)
 
   if (isMobile) {
     return (
-      <Layout>
-        <div className="ContentContainer">
+      <Layout isMobile={isMobile}>
+        <div className="MobileContentContainer">
           <MobileBanner />
         </div>
       </Layout>
