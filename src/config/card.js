@@ -26,22 +26,25 @@ export const CARD_CONFIG = [
     label: "hard skills",
     tags: [
       {
-        label: "HTML & CSS",
+        label: "HTML",
+      },
+      {
+        label: "CSS",
       },
       {
         label: "JavaScript",
       },
       {
-        label: "Git & GitHub",
+        label: "Git",
       },
       {
-        label: "JavaScript frameworks",
+        label: "React",
       },
       {
-        label: "Developer tools",
+        label: "Next.js",
       },
       {
-        label: "Usability basics",
+        label: "Vite.js",
       },
     ],
   },
@@ -49,16 +52,7 @@ export const CARD_CONFIG = [
     label: "my projects",
     tags: [
       {
-        label: "hiu",
-      },
-      {
-        label: "chlen",
-      },
-      {
-        label: "penis",
-      },
-      {
-        label: "gordos",
+        label: "qrnx",
       },
     ],
   },
@@ -68,10 +62,6 @@ export const CARD_CONFIG = [
       {
         label: "github",
         url: "https://github.com/Sulaev",
-      },
-      {
-        label: "linkedin",
-        url: "/test",
       },
       {
         label: "telegram",
