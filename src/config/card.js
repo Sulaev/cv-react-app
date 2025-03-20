@@ -35,6 +35,9 @@ export const CARD_CONFIG = [
         label: "JavaScript",
       },
       {
+        label: "TypeScript",
+      },
+      {
         label: "Git",
       },
       {
