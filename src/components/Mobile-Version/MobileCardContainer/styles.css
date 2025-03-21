@@ -1,0 +1,8 @@
+.MobileCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 20%;
+  width: 100%;
+  opacity: 1;
+}

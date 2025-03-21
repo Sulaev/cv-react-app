@@ -1,9 +1,10 @@
 import { Layout } from "@/components/Layout"
 import { Banner } from "@/components/Banner"
-import { MobileBanner } from "@/components/MobileBanner"
+import { MobileBanner } from "@/components/Mobile-Version/MobileBanner"
 import "./styles.css"
 import { CardContainer } from "@/components/CardContainer"
-import React, { useState, useEffect } from "react"
+import { MobileCardContainer } from "@/components/Mobile-Version/MobileCardContainer"
+import { useState, useEffect } from "react"
 
 export const Main = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -23,6 +24,7 @@ export const Main = () => {
         <div className="MobileContentContainer">
           <MobileBanner />
         </div>
+        <MobileCardContainer />
       </Layout>
     )
   }

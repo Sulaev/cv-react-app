@@ -1,0 +1,32 @@
+.MobileCard {
+  border: 1px solid rgba(255, 255, 255, 0.33);
+  border-radius: 25px;
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.Card__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+
+.Tag__list {
+  display: flex;
+  position: absolute;
+  bottom: 100%;
+  padding: 10px;
+  border-radius: 25px;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.MobileArrowIcon {
+  rotate: 90deg;
+}
